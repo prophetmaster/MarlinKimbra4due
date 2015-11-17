@@ -34,11 +34,11 @@
 // User-specified version info of this build to display in [Pronterface, etc] terminal window during
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
-#define STRING_CONFIG_H_AUTHOR "(none, default config)"   // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "Sullivan Buchs"   // Who made the changes.
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
-#define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
+#define MACHINE_UUID "b99d1257-1f88-4dc1-83ab-24a51e8cfcbb"
 
 // If you want test the firmware uncomment below. Use Serial arduino monitor...
 //#define FIRMWARE_TEST // ONLY BAUDRATE 115200
@@ -57,17 +57,17 @@
  * See: https://github.com/MagoKimbra/MarlinKimbra/blob/master/Documentation/Hardware.md *
  *                                                                                       *
  *****************************************************************************************/
-#define MOTHERBOARD BOARD_ALLIGATOR
+#define MOTHERBOARD BOARD_RAMPS_FD_V2
 /*****************************************************************************************/
 
 
 /***********************************************************************
  *************************** Mechanism type ****************************
  ***********************************************************************/
-#define MECHANISM MECH_CARTESIAN
+//#define MECHANISM MECH_CARTESIAN
 //#define MECHANISM MECH_COREXY
 //#define MECHANISM MECH_COREXZ
-//#define MECHANISM MECH_DELTA
+#define MECHANISM MECH_DELTA
 //#define MECHANISM MECH_SCARA
 /***********************************************************************/
 
@@ -146,11 +146,11 @@
  *  998 and 999 are Dummy Tables. ALWAYS read 25°C or DUMMY_THERMISTOR_998_VALUE temperature         *
  *                                                                                                   *
  *****************************************************************************************************/
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 5
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
-#define TEMP_SENSOR_BED 0
+#define TEMP_SENSOR_BED 5
 
 //These 2 defines help to calibrate the AD595 sensor in case you get wrong temperature measurements.
 //The measured temperature is defined as "actualTemp = (measuredTemp * TEMP_SENSOR_AD595_GAIN) + TEMP_SENSOR_AD595_OFFSET"
@@ -235,6 +235,6 @@
  * 19 Chinese                                                          *
  *                                                                     *
  ***********************************************************************/
-#define LANGUAGE_CHOICE 1
+#define LANGUAGE_CHOICE 3
 /***********************************************************************/
 #endif
