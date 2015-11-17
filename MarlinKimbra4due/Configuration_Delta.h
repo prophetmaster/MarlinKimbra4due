@@ -36,7 +36,7 @@
  * Displayed in the LCD "Ready" message.                                                 *
  *                                                                                       *
  *****************************************************************************************/
-#define CUSTOM_MACHINE_NAME "Prusa"
+#define CUSTOM_MACHINE_NAME "VOSTOK"
 /*****************************************************************************************/
 
 
@@ -48,22 +48,28 @@
 // and processor overload (too many expensive sqrt calls).
 // The new function do not use segments per second but segments per mm
 // if you want use new function comment this (using // at the start of the line)
-#define DELTA_SEGMENTS_PER_SECOND 150
+#define DELTA_SEGMENTS_PER_SECOND 200
 
 // Center-to-center distance of the holes in the diagonal push rods.
-#define DEFAULT_DELTA_DIAGONAL_ROD 217.0    // mm
+#define DEFAULT_DELTA_DIAGONAL_ROD 276.40    // mm
 
 // Horizontal offset from middle of printer to smooth rod center.
 #define DELTA_SMOOTH_ROD_OFFSET 145.0       // mm
 
 // Horizontal offset of the universal joints on the end effector.
-#define DELTA_EFFECTOR_OFFSET 20.0          // mm
+#define DELTA_EFFECTOR_OFFSET 15.0          // mm
 
 // Horizontal offset of the universal joints on the carriages.
 #define DELTA_CARRIAGE_OFFSET 20.0          // mm
 
+// Effective horizontal distance bridged by diagonal push rods.
+#define DEFAULT_DELTA_RADIUS 169.75 // or -> (DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
+
 // Bed Printer radius
 #define BED_PRINTER_RADIUS 75               // mm
+
+// Bed Probable radius 
+#define DELTA_PROBABLE_RADIUS 80			// mm
 
 //Endstop Offset Adjustment - All values are in mm and must be negative (to move down away from endstop switches) 
 #define TOWER_A_ENDSTOP_ADJ 0 // Front Left Tower
@@ -105,21 +111,21 @@
  * Uncomment Z_PROBE_ENDSTOP to enable.                                                  *
  *                                                                                       *
  *****************************************************************************************/
-//#define Z_PROBE_ENDSTOP
+#define Z_PROBE_ENDSTOP
 
 // Uncomment to enable autocalibration debug messages
 #define DEBUG_MESSAGES
 
 // Speed for autocalibration travel and probing moves
-#define AUTOCAL_TRAVELRATE 100  // mm/sec
-#define AUTOCAL_PROBERATE   50  // mm/sec
+#define AUTOCAL_TRAVELRATE 300  // mm/sec
+#define AUTOCAL_PROBERATE  100  // mm/sec
 
 // Precision for G30 delta autocalibration function
-#define AUTOCALIBRATION_PRECISION 0.1 // mm
+#define AUTOCALIBRATION_PRECISION 0.05 // mm
 
 // Z-Probe variables
 // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe.
-#define Z_PROBE_OFFSET {0, 0, -1}
+#define Z_PROBE_OFFSET {0, 18, -25}
 
 // Start and end location values are used to deploy/retract the probe (will move from start to end and back again)
 #define Z_PROBE_DEPLOY_START_LOCATION {0, 0, 20}   // X, Y, Z, E start location for z-probe deployment sequence
@@ -128,7 +134,7 @@
 #define Z_PROBE_RETRACT_END_LOCATION {0, 0, 20}    // X, Y, Z, E end location for z-probe retract sequence
 
 // How much the nozzle will be raised when travelling from between next probing points
-#define Z_RAISE_BETWEEN_PROBINGS 5
+#define Z_RAISE_BETWEEN_PROBINGS 10
 
 // Works best with ACCURATE_BED_LEVELING_POINTS 5 or higher.
 #define AUTO_BED_LEVELING_GRID_POINTS 9
@@ -170,16 +176,16 @@
  * uses "false" here (most common setup).                                                *
  *                                                                                       *
  *****************************************************************************************/
-#define X_MIN_ENDSTOP_LOGIC   false   // set to true to invert the logic of the endstop.
-#define Y_MIN_ENDSTOP_LOGIC   false   // set to true to invert the logic of the endstop.
-#define Z_MIN_ENDSTOP_LOGIC   false   // set to true to invert the logic of the endstop.
-#define Z2_MIN_ENDSTOP_LOGIC  false   // set to true to invert the logic of the endstop.
-#define X_MAX_ENDSTOP_LOGIC   false   // set to true to invert the logic of the endstop.
-#define Y_MAX_ENDSTOP_LOGIC   false   // set to true to invert the logic of the endstop.
-#define Z_MAX_ENDSTOP_LOGIC   false   // set to true to invert the logic of the endstop.
-#define Z2_MAX_ENDSTOP_LOGIC  false   // set to true to invert the logic of the endstop.
-#define Z_PROBE_ENDSTOP_LOGIC false   // set to true to invert the logic of the endstop.
-#define E_MIN_ENDSTOP_LOGIC   false   // set to true to invert the logic of the endstop.
+#define X_MIN_ENDSTOP_LOGIC   true   // set to true to invert the logic of the endstop.
+#define Y_MIN_ENDSTOP_LOGIC   true   // set to true to invert the logic of the endstop.
+#define Z_MIN_ENDSTOP_LOGIC   true   // set to true to invert the logic of the endstop.
+#define Z2_MIN_ENDSTOP_LOGIC  true   // set to true to invert the logic of the endstop.
+#define X_MAX_ENDSTOP_LOGIC   true   // set to true to invert the logic of the endstop.
+#define Y_MAX_ENDSTOP_LOGIC   true   // set to true to invert the logic of the endstop.
+#define Z_MAX_ENDSTOP_LOGIC   true   // set to true to invert the logic of the endstop.
+#define Z2_MAX_ENDSTOP_LOGIC  true   // set to true to invert the logic of the endstop.
+#define Z_PROBE_ENDSTOP_LOGIC true   // set to true to invert the logic of the endstop.
+#define E_MIN_ENDSTOP_LOGIC   true   // set to true to invert the logic of the endstop.
 /*****************************************************************************************/
 
 
@@ -239,10 +245,10 @@
 #define INVERT_X_DIR false
 #define INVERT_Y_DIR false
 #define INVERT_Z_DIR false
-#define INVERT_E0_DIR false
-#define INVERT_E1_DIR false
-#define INVERT_E2_DIR false
-#define INVERT_E3_DIR false
+#define INVERT_E0_DIR true
+#define INVERT_E1_DIR true
+#define INVERT_E2_DIR true
+#define INVERT_E3_DIR true
 /*****************************************************************************************/
 
 
@@ -296,16 +302,16 @@
 //Manual homing switch locations:
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
-#define MANUAL_Z_HOME_POS 200      // Distance between nozzle and print surface after homing.
+#define MANUAL_Z_HOME_POS 400      // Distance between nozzle and print surface after homing.
 /*****************************************************************************************/
 
 
 /*****************************************************************************************
  ******************************* Axis steps per unit *************************************
  *****************************************************************************************/
-#define XYZ_STEPS_PER_UNIT 80
+#define XYZ_STEPS_PER_UNIT 400
  // Default steps per unit                              X,                  Y,                  Z,  E0...(per extruder)
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {XYZ_STEPS_PER_UNIT, XYZ_STEPS_PER_UNIT, XYZ_STEPS_PER_UNIT, 625, 625, 625, 625}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {XYZ_STEPS_PER_UNIT, XYZ_STEPS_PER_UNIT, XYZ_STEPS_PER_UNIT, 397.4, 625, 625, 625}
 /*****************************************************************************************/
 
 

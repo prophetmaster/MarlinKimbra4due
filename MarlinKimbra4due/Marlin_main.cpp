@@ -2512,7 +2512,7 @@ static void clean_up_after_endstop_move() {
 
   float probe_bed(float x, float y) {
     //Probe bed at specified location and return z height of bed
-    float probe_z, probe_bed_array[20];
+    float probe_z, probe_bed_array[(AUTO_BED_LEVELING_GRID_POINTS*AUTO_BED_LEVELING_GRID_POINTS)];
     int probe_count;
     boolean probe_done;
 
@@ -2534,7 +2534,7 @@ static void clean_up_after_endstop_move() {
         }
       }
       probe_count ++;
-    } while ((probe_done == false) and (probe_count < 20));
+    } while ((probe_done == false) and (probe_count < (AUTO_BED_LEVELING_GRID_POINTS*AUTO_BED_LEVELING_GRID_POINTS)));
 
     bed_safe_z = probe_z + 5;
     return probe_z;
@@ -3947,7 +3947,7 @@ inline void gcode_G28() {
     saved_feedrate = feedrate;
     saved_feedrate_multiplier = feedrate_multiplier;
     feedrate_multiplier = 100;
-
+	reset_bed_level(); // Important !!!
     home_delta_axis();
     deploy_z_probe();
     calibrate_print_surface(z_probe_offset[Z_AXIS] + (code_seen(axis_codes[Z_AXIS]) ? code_value() : 0.0));

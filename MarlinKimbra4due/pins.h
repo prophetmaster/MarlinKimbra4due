@@ -2186,6 +2186,8 @@
   #define RAMPS_FD_V2
   // EEPROM supported
   // Use 1k thermistor tables
+  #define INVERTED_HEATER_PINS
+  #define INVERTED_BED_PINS
 #endif
 
 #define ORIG_X_STEP_PIN         63
@@ -2224,11 +2226,11 @@
 
 #define BEEPER_PIN              -1
 
-#define ORIG_FAN_PIN            -1
+#define ORIG_FAN_PIN            2
 
 #define CONTROLLERORIG_FAN_PIN  -1 //Pin used for the fan to cool controller
 
-#define PS_ON_PIN               -1
+#define PS_ON_PIN               53
 
 #define KILL_PIN                -1
 
@@ -2239,21 +2241,21 @@
 #define ORIG_HEATER_1_PIN       10
 #define ORIG_HEATER_2_PIN       11
 
-#define ORIG_TEMP_BED_PIN        7   // ANALOG NUMBERING
+#define ORIG_TEMP_BED_PIN        3   // ANALOG NUMBERING
 
-#define ORIG_TEMP_0_PIN          6   // ANALOG NUMBERING
-#define ORIG_TEMP_1_PIN          5   // 2    // ANALOG NUMBERING
-#define ORIG_TEMP_2_PIN          4   // 3     // ANALOG NUMBERING
-#define ORIG_TEMP_3_PIN          3   // ANALOG NUMBERING
+#define ORIG_TEMP_0_PIN          0   // ANALOG NUMBERING
+#define ORIG_TEMP_1_PIN          1   // 2    // ANALOG NUMBERING
+#define ORIG_TEMP_2_PIN          2   // 3     // ANALOG NUMBERING
+#define ORIG_TEMP_3_PIN         -1   // ANALOG NUMBERING
 
 #if NUM_SERVOS > 0
-  #define SERVO0_PIN            11
+  #define SERVO0_PIN             7
   #if NUM_SERVOS > 1
     #define SERVO1_PIN           6
     #if NUM_SERVOS > 2
       #define SERVO2_PIN         5
       #if NUM_SERVOS > 3
-        #define SERVO3_PIN       4
+        #define SERVO3_PIN       3
       #endif
     #endif
   #endif

@@ -175,9 +175,9 @@
 #define LPQ_MAX_LEN 50
 
 //           HotEnd{HE0,HE1,HE2,HE3}
-#define DEFAULT_Kp {40, 40, 40, 40}     // Kp for E0, E1, E2, E3
-#define DEFAULT_Ki {07, 07, 07, 07}     // Ki for E0, E1, E2, E3
-#define DEFAULT_Kd {60, 60, 60, 60}     // Kd for E0, E1, E2, E3
+#define DEFAULT_Kp {21.44, 40, 40, 40}     // Kp for E0, E1, E2, E3
+#define DEFAULT_Ki {1.12, 07, 07, 07}     // Ki for E0, E1, E2, E3
+#define DEFAULT_Kd {102.94, 60, 60, 60}     // Kd for E0, E1, E2, E3
 #define DEFAULT_Kc {100, 100, 100, 100} // heating power = Kc * (e_speed)
 /***********************************************************************/
 
@@ -218,15 +218,15 @@
 #define PID_BED_INTEGRAL_DRIVE_MAX MAX_BED_POWER // limit for the integral term
 // 120v 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
 // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-#define  DEFAULT_bedKp 10.00
-#define  DEFAULT_bedKi .023
-#define  DEFAULT_bedKd 305.4
+//#define  DEFAULT_bedKp 10.00
+//#define  DEFAULT_bedKi .023
+//#define  DEFAULT_bedKd 305.4
 
 // 120v 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
 // from pidautotune
-//#define  DEFAULT_bedKp 97.1
-//#define  DEFAULT_bedKi 1.41
-//#define  DEFAULT_bedKd 1675.16
+#define  DEFAULT_bedKp 97.1
+#define  DEFAULT_bedKi 1.41
+#define  DEFAULT_bedKd 1675.16
 
 // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 
@@ -968,8 +968,8 @@
  *                                                                                                                      *
  ************************************************************************************************************************/
 // Uncomment EEPROM_SETTINGS to enable EEPROM support
-//#define EEPROM_SETTINGS
-//#define EEPROM_CHITCHAT // Uncomment this to enable EEPROM Serial responses.
+#define EEPROM_SETTINGS
+#define EEPROM_CHITCHAT // Uncomment this to enable EEPROM Serial responses.
 //#define DISABLE_M503
 /************************************************************************************************************************/
 
@@ -977,7 +977,7 @@
 /*****************************************************************************************
  *************************************** SDCARD *******************************************
  ****************************************************************************************/
-//#define SDSUPPORT                              // Enable SD Card Support in Hardware Console
+#define SDSUPPORT                              // Enable SD Card Support in Hardware Console
 //#define SDSLOW                                 // Use slower SD transfer mode (not normally needed - uncomment if you're getting volume init error)
 //#define SDEXTRASLOW                            // Use even slower SD transfer mode (not normally needed - uncomment if you're getting volume init error)
 //#define SD_CHECK_AND_RETRY                     // Use CRC checks and retries on the SD communication
@@ -1096,7 +1096,7 @@
 // http://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
 // ==> REMEMBER TO INSTALL U8glib to your ARDUINO library folder: https://github.com/olikraus/U8glib_Arduino
-//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
 // The RepRapWorld REPRAPWORLD_KEYPAD v1.1
 // http://reprapworld.com/?products_details&products_id=202&cPath=1591_1626

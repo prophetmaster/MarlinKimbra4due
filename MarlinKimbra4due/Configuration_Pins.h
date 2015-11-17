@@ -130,7 +130,7 @@
 #endif
 
 #if ENABLED(Z_PROBE_ENDSTOP)
-  #define Z_PROBE_PIN -1
+  #define Z_PROBE_PIN ORIG_Z_MIN_PIN
 #endif
 
 //============================================================================
