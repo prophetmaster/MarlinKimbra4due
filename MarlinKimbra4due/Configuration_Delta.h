@@ -69,7 +69,7 @@
 #define BED_PRINTER_RADIUS 100               // mm
 
 // Bed Probable radius 
-#define DELTA_PROBABLE_RADIUS 60			// mm
+#define DELTA_PROBABLE_RADIUS 80			// mm
 
 //Endstop Offset Adjustment - All values are in mm and must be negative (to move down away from endstop switches) 
 #define TOWER_A_ENDSTOP_ADJ 0 // Front Left Tower
@@ -121,7 +121,7 @@
 #define AUTOCAL_PROBERATE  100  // mm/sec
 
 // Precision for G30 delta autocalibration function
-#define AUTOCALIBRATION_PRECISION 0.1 // mm
+#define AUTOCALIBRATION_PRECISION 0.05 // mm
 
 // Z-Probe variables
 // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe.
@@ -134,10 +134,10 @@
 #define Z_PROBE_RETRACT_END_LOCATION {0, 0, 20}    // X, Y, Z, E end location for z-probe retract sequence
 
 // How much the nozzle will be raised when travelling from between next probing points
-#define Z_RAISE_BETWEEN_PROBINGS 10
+#define Z_RAISE_BETWEEN_PROBINGS 5
 
 // Works best with ACCURATE_BED_LEVELING_POINTS 5 or higher.
-#define AUTO_BED_LEVELING_GRID_POINTS 9
+#define AUTO_BED_LEVELING_GRID_POINTS 7
 
 /*****************************************************************************************/
 
