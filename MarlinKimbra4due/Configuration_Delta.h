@@ -51,7 +51,7 @@
 #define DELTA_SEGMENTS_PER_SECOND 150
 
 // Center-to-center distance of the holes in the diagonal push rods.
-#define DEFAULT_DELTA_DIAGONAL_ROD 279.000    // mm
+#define DEFAULT_DELTA_DIAGONAL_ROD 279.400    // mm
 
 // Horizontal offset from middle of printer to smooth rod center.
 #define DELTA_SMOOTH_ROD_OFFSET 210.000       // mm
@@ -63,7 +63,7 @@
 #define DELTA_CARRIAGE_OFFSET 15.000          // mm
 
 // Effective horizontal distance bridged by diagonal push rods.
-#define DEFAULT_DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
+#define DEFAULT_DELTA_RADIUS 170.1929 //(DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
 
 // Bed Printer radius
 #define BED_PRINTER_RADIUS 100               // mm
@@ -72,9 +72,9 @@
 #define DELTA_PROBABLE_RADIUS 80			// mm
 
 //Endstop Offset Adjustment - All values are in mm and must be negative (to move down away from endstop switches) 
-#define TOWER_A_ENDSTOP_ADJ 0 // Front Left Tower
-#define TOWER_B_ENDSTOP_ADJ 0 // Front Right Tower
-#define TOWER_C_ENDSTOP_ADJ 0 // Rear Tower
+#define TOWER_A_ENDSTOP_ADJ -2.292 // Front Left Tower
+#define TOWER_B_ENDSTOP_ADJ  0.000 // Front Right Tower
+#define TOWER_C_ENDSTOP_ADJ -1.760 // Rear Tower
 
 //Tower Position Adjustment - Adj x Degrees around delta radius (- move clockwise / + move anticlockwise)
 #define TOWER_A_POSITION_ADJ 0 //Front Left Tower
@@ -82,9 +82,9 @@
 #define TOWER_C_POSITION_ADJ 0 //Rear Tower
 
 //Tower Radius Adjustment - Adj x mm in/out from centre of printer (- move in / + move out)
-#define TOWER_A_RADIUS_ADJ 0 //Front Left Tower
-#define TOWER_B_RADIUS_ADJ 0 //Front Right Tower
-#define TOWER_C_RADIUS_ADJ 0 //Rear Tower
+#define TOWER_A_RADIUS_ADJ  0.000 //Front Left Tower
+#define TOWER_B_RADIUS_ADJ -0.260 //Front Right Tower
+#define TOWER_C_RADIUS_ADJ  0.940 //Rear Tower
 
 //Diagonal Rod Adjustment - Adj diag rod for Tower by x mm from DEFAULT_DELTA_DIAGONAL_ROD value
 #define TOWER_A_DIAGROD_ADJ 0 //Front Left Tower
@@ -117,7 +117,7 @@
 #define DEBUG_MESSAGES
 
 // Speed for autocalibration travel and probing moves
-#define AUTOCAL_TRAVELRATE 300  // mm/sec
+#define AUTOCAL_TRAVELRATE 200  // mm/sec
 #define AUTOCAL_PROBERATE  100  // mm/sec
 
 // Precision for G30 delta autocalibration function
@@ -125,7 +125,7 @@
 
 // Z-Probe variables
 // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe.
-#define Z_PROBE_OFFSET {0, 18, -0.25}
+#define Z_PROBE_OFFSET {0, 18, -0.35}
 
 // Start and end location values are used to deploy/retract the probe (will move from start to end and back again)
 #define Z_PROBE_DEPLOY_START_LOCATION {0, 0, 20}   // X, Y, Z, E start location for z-probe deployment sequence
@@ -137,7 +137,7 @@
 #define Z_RAISE_BETWEEN_PROBINGS 5
 
 // Works best with ACCURATE_BED_LEVELING_POINTS 5 or higher.
-#define AUTO_BED_LEVELING_GRID_POINTS 7
+#define AUTO_BED_LEVELING_GRID_POINTS 5
 
 /*****************************************************************************************/
 
@@ -302,7 +302,7 @@
 //Manual homing switch locations:
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
-#define MANUAL_Z_HOME_POS 405      // Distance between nozzle and print surface after homing.
+#define MANUAL_Z_HOME_POS 403      // Distance between nozzle and print surface after homing.
 /*****************************************************************************************/
 
 
