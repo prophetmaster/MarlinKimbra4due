@@ -48,28 +48,28 @@
 // and processor overload (too many expensive sqrt calls).
 // The new function do not use segments per second but segments per mm
 // if you want use new function comment this (using // at the start of the line)
-#define DELTA_SEGMENTS_PER_SECOND 200
+#define DELTA_SEGMENTS_PER_SECOND 150
 
 // Center-to-center distance of the holes in the diagonal push rods.
-#define DEFAULT_DELTA_DIAGONAL_ROD 276.40    // mm
+#define DEFAULT_DELTA_DIAGONAL_ROD 279.000    // mm
 
 // Horizontal offset from middle of printer to smooth rod center.
-#define DELTA_SMOOTH_ROD_OFFSET 145.0       // mm
+#define DELTA_SMOOTH_ROD_OFFSET 210.000       // mm
 
 // Horizontal offset of the universal joints on the end effector.
-#define DELTA_EFFECTOR_OFFSET 15.0          // mm
+#define DELTA_EFFECTOR_OFFSET 25.000          // mm
 
 // Horizontal offset of the universal joints on the carriages.
-#define DELTA_CARRIAGE_OFFSET 20.0          // mm
+#define DELTA_CARRIAGE_OFFSET 15.000          // mm
 
 // Effective horizontal distance bridged by diagonal push rods.
-#define DEFAULT_DELTA_RADIUS 169.75 // or -> (DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
+#define DEFAULT_DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
 
 // Bed Printer radius
-#define BED_PRINTER_RADIUS 75               // mm
+#define BED_PRINTER_RADIUS 100               // mm
 
 // Bed Probable radius 
-#define DELTA_PROBABLE_RADIUS 80			// mm
+#define DELTA_PROBABLE_RADIUS 60			// mm
 
 //Endstop Offset Adjustment - All values are in mm and must be negative (to move down away from endstop switches) 
 #define TOWER_A_ENDSTOP_ADJ 0 // Front Left Tower
@@ -121,11 +121,11 @@
 #define AUTOCAL_PROBERATE  100  // mm/sec
 
 // Precision for G30 delta autocalibration function
-#define AUTOCALIBRATION_PRECISION 0.05 // mm
+#define AUTOCALIBRATION_PRECISION 0.1 // mm
 
 // Z-Probe variables
 // X, Y, Z, E distance between hotend nozzle and deployed bed leveling probe.
-#define Z_PROBE_OFFSET {0, 18, -25}
+#define Z_PROBE_OFFSET {0, 18, -0.25}
 
 // Start and end location values are used to deploy/retract the probe (will move from start to end and back again)
 #define Z_PROBE_DEPLOY_START_LOCATION {0, 0, 20}   // X, Y, Z, E start location for z-probe deployment sequence
@@ -302,7 +302,7 @@
 //Manual homing switch locations:
 #define MANUAL_X_HOME_POS 0
 #define MANUAL_Y_HOME_POS 0
-#define MANUAL_Z_HOME_POS 400      // Distance between nozzle and print surface after homing.
+#define MANUAL_Z_HOME_POS 405      // Distance between nozzle and print surface after homing.
 /*****************************************************************************************/
 
 

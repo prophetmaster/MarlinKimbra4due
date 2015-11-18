@@ -12,7 +12,7 @@
 #define _VSARDUINO_H_
 #define printf iprintf
 #define F_CPU 84000000L
-#define ARDUINO 164
+#define ARDUINO 160
 #define ARDUINO_SAM_DUE
 #define ARDUINO_ARCH_SAM
 #define __SAM3X8E__
@@ -27,9 +27,8 @@
 #define __ATTR_PURE__
 #define __ATTR_CONST__
 #define __inline__
-#define __asm__ 
 #define __volatile__
-
+#define __SIZE_TYPE__ long
 
 #define __ICCARM__
 #define __ASM
@@ -66,9 +65,7 @@ extern const int ADC_MR_TRGSEL_Pos = 0;
 
 extern const int ADC_MR_TRGSEL_Msk = 0;
 extern const int ADC_MR_TRGEN = 0;
-extern const int ADC_TRIG_TIO_CH_0 = 0;
 extern const int ADC_MR_TRGSEL_ADC_TRIG1 = 0;
-extern const int ADC_TRIG_TIO_CH_1 = 0;
 extern const int ADC_MR_TRGSEL_ADC_TRIG2 = 0;
 extern const int ADC_MR_TRGSEL_ADC_TRIG3 = 0;
 
@@ -81,7 +78,6 @@ extern const int ADC_MR_TRGSEL_ADC_TRIG3 = 0;
 #define PGM_VOID_P int
 
 
-            
 typedef unsigned char byte;
 extern "C" void __cxa_pure_virtual() {;}
 
@@ -106,105 +102,105 @@ extern "C" void __cxa_pure_virtual() {;}
 #define portOutputRegister(P)
 #define portInputRegister(P)
 #define portModeRegister(P)
-#include <MarlinKimbra4due.ino>
-#include <Boards.h>
-#include <Configuration_Basic.h>
-#include <Configuration_Cartesian.h>
-#include <Configuration_Core.h>
-#include <Configuration_Delta.h>
-#include <Configuration_Feature.h>
-#include <Configuration_Overall.h>
-#include <Configuration_Pins.h>
-#include <Configuration_Scara.h>
-#include <Configuration_Version.h>
-#include <HAL.cpp>
-#include <HAL.h>
-#include <Marlin_main.cpp>
-#include <Marlin_main.h>
-#include <Sd2Card.cpp>
-#include <Sd2Card.h>
-#include <SdBaseFile.cpp>
-#include <SdBaseFile.h>
-#include <SdFatConfig.h>
-#include <SdFatStructs.h>
-#include <SdFile.cpp>
-#include <SdFile.h>
-#include <SdInfo.h>
-#include <SdVolume.cpp>
-#include <SdVolume.h>
-#include <ServoTimers.h>
-#include <base.h>
-#include <blinkm.cpp>
-#include <blinkm.h>
-#include <buzzer.cpp>
-#include <buzzer.h>
-#include <cardreader.cpp>
-#include <cardreader.h>
-#include <comunication.h>
-#include <conditionals.h>
-#include <configuration_store.cpp>
-#include <configuration_store.h>
-#include <dogm_bitmaps.h>
-#include <dogm_font_data_6x9_marlin.h>
-#include <dogm_font_data_HD44780_C.h>
-#include <dogm_font_data_HD44780_J.h>
-#include <dogm_font_data_HD44780_W.h>
-#include <dogm_font_data_ISO10646_1.h>
-#include <dogm_font_data_ISO10646_5_Cyrillic.h>
-#include <dogm_font_data_ISO10646_Kana.h>
-#include <dogm_font_data_Marlin_symbols.h>
-#include <dogm_lcd_implementation.h>
-#include <external_dac.cpp>
-#include <external_dac.h>
-#include <fastio.h>
-#include <firmware_test.cpp>
-#include <firmware_test.h>
-#include <language.h>
-#include <language_an.h>
-#include <language_bg.h>
-#include <language_ca.h>
-#include <language_cn.h>
-#include <language_da.h>
-#include <language_de.h>
-#include <language_en.h>
-#include <language_es.h>
-#include <language_eu.h>
-#include <language_fi.h>
-#include <language_fr.h>
-#include <language_it.h>
-#include <language_kana.h>
-#include <language_kana_utf8.h>
-#include <language_nl.h>
-#include <language_pl.h>
-#include <language_pt-br.h>
-#include <language_pt.h>
-#include <language_ru.h>
-#include <macros.h>
-#include <mechanics.h>
-#include <nextion_lcd.cpp>
-#include <nextion_lcd.h>
-#include <pins.h>
-#include <planner.cpp>
-#include <planner.h>
-#include <qr_solve.cpp>
-#include <qr_solve.h>
-#include <sanitycheck.h>
-#include <servo.cpp>
-#include <servo.h>
-#include <stepper.cpp>
-#include <stepper.h>
-#include <stepper_indirection.cpp>
-#include <stepper_indirection.h>
-#include <temperature.cpp>
-#include <temperature.h>
-#include <thermistortables.h>
-#include <ultralcd.cpp>
-#include <ultralcd.h>
-#include <ultralcd_implementation_hitachi_HD44780.h>
-#include <ultralcd_st7920_u8glib_rrd.h>
-#include <utf_mapper.h>
-#include <vector_3.cpp>
-#include <vector_3.h>
-#include <watchdog.cpp>
-#include <watchdog.h>
+#include <..\MarlinKimbra4due\MarlinKimbra4due.ino>
+#include <..\MarlinKimbra4due\Boards.h>
+#include <..\MarlinKimbra4due\Configuration_Basic.h>
+#include <..\MarlinKimbra4due\Configuration_Cartesian.h>
+#include <..\MarlinKimbra4due\Configuration_Core.h>
+#include <..\MarlinKimbra4due\Configuration_Delta.h>
+#include <..\MarlinKimbra4due\Configuration_Feature.h>
+#include <..\MarlinKimbra4due\Configuration_Overall.h>
+#include <..\MarlinKimbra4due\Configuration_Pins.h>
+#include <..\MarlinKimbra4due\Configuration_Scara.h>
+#include <..\MarlinKimbra4due\Configuration_Version.h>
+#include <..\MarlinKimbra4due\HAL.cpp>
+#include <..\MarlinKimbra4due\HAL.h>
+#include <..\MarlinKimbra4due\Marlin_main.cpp>
+#include <..\MarlinKimbra4due\Marlin_main.h>
+#include <..\MarlinKimbra4due\Sd2Card.cpp>
+#include <..\MarlinKimbra4due\Sd2Card.h>
+#include <..\MarlinKimbra4due\SdBaseFile.cpp>
+#include <..\MarlinKimbra4due\SdBaseFile.h>
+#include <..\MarlinKimbra4due\SdFatConfig.h>
+#include <..\MarlinKimbra4due\SdFatStructs.h>
+#include <..\MarlinKimbra4due\SdFile.cpp>
+#include <..\MarlinKimbra4due\SdFile.h>
+#include <..\MarlinKimbra4due\SdInfo.h>
+#include <..\MarlinKimbra4due\SdVolume.cpp>
+#include <..\MarlinKimbra4due\SdVolume.h>
+#include <..\MarlinKimbra4due\ServoTimers.h>
+#include <..\MarlinKimbra4due\base.h>
+#include <..\MarlinKimbra4due\blinkm.cpp>
+#include <..\MarlinKimbra4due\blinkm.h>
+#include <..\MarlinKimbra4due\buzzer.cpp>
+#include <..\MarlinKimbra4due\buzzer.h>
+#include <..\MarlinKimbra4due\cardreader.cpp>
+#include <..\MarlinKimbra4due\cardreader.h>
+#include <..\MarlinKimbra4due\comunication.h>
+#include <..\MarlinKimbra4due\conditionals.h>
+#include <..\MarlinKimbra4due\configuration_store.cpp>
+#include <..\MarlinKimbra4due\configuration_store.h>
+#include <..\MarlinKimbra4due\dogm_bitmaps.h>
+#include <..\MarlinKimbra4due\dogm_font_data_6x9_marlin.h>
+#include <..\MarlinKimbra4due\dogm_font_data_HD44780_C.h>
+#include <..\MarlinKimbra4due\dogm_font_data_HD44780_J.h>
+#include <..\MarlinKimbra4due\dogm_font_data_HD44780_W.h>
+#include <..\MarlinKimbra4due\dogm_font_data_ISO10646_1.h>
+#include <..\MarlinKimbra4due\dogm_font_data_ISO10646_5_Cyrillic.h>
+#include <..\MarlinKimbra4due\dogm_font_data_ISO10646_Kana.h>
+#include <..\MarlinKimbra4due\dogm_font_data_Marlin_symbols.h>
+#include <..\MarlinKimbra4due\dogm_lcd_implementation.h>
+#include <..\MarlinKimbra4due\external_dac.cpp>
+#include <..\MarlinKimbra4due\external_dac.h>
+#include <..\MarlinKimbra4due\fastio.h>
+#include <..\MarlinKimbra4due\firmware_test.cpp>
+#include <..\MarlinKimbra4due\firmware_test.h>
+#include <..\MarlinKimbra4due\language.h>
+#include <..\MarlinKimbra4due\language_an.h>
+#include <..\MarlinKimbra4due\language_bg.h>
+#include <..\MarlinKimbra4due\language_ca.h>
+#include <..\MarlinKimbra4due\language_cn.h>
+#include <..\MarlinKimbra4due\language_da.h>
+#include <..\MarlinKimbra4due\language_de.h>
+#include <..\MarlinKimbra4due\language_en.h>
+#include <..\MarlinKimbra4due\language_es.h>
+#include <..\MarlinKimbra4due\language_eu.h>
+#include <..\MarlinKimbra4due\language_fi.h>
+#include <..\MarlinKimbra4due\language_fr.h>
+#include <..\MarlinKimbra4due\language_it.h>
+#include <..\MarlinKimbra4due\language_kana.h>
+#include <..\MarlinKimbra4due\language_kana_utf8.h>
+#include <..\MarlinKimbra4due\language_nl.h>
+#include <..\MarlinKimbra4due\language_pl.h>
+#include <..\MarlinKimbra4due\language_pt-br.h>
+#include <..\MarlinKimbra4due\language_pt.h>
+#include <..\MarlinKimbra4due\language_ru.h>
+#include <..\MarlinKimbra4due\macros.h>
+#include <..\MarlinKimbra4due\mechanics.h>
+#include <..\MarlinKimbra4due\nextion_lcd.cpp>
+#include <..\MarlinKimbra4due\nextion_lcd.h>
+#include <..\MarlinKimbra4due\pins.h>
+#include <..\MarlinKimbra4due\planner.cpp>
+#include <..\MarlinKimbra4due\planner.h>
+#include <..\MarlinKimbra4due\qr_solve.cpp>
+#include <..\MarlinKimbra4due\qr_solve.h>
+#include <..\MarlinKimbra4due\sanitycheck.h>
+#include <..\MarlinKimbra4due\servo.cpp>
+#include <..\MarlinKimbra4due\servo.h>
+#include <..\MarlinKimbra4due\stepper.cpp>
+#include <..\MarlinKimbra4due\stepper.h>
+#include <..\MarlinKimbra4due\stepper_indirection.cpp>
+#include <..\MarlinKimbra4due\stepper_indirection.h>
+#include <..\MarlinKimbra4due\temperature.cpp>
+#include <..\MarlinKimbra4due\temperature.h>
+#include <..\MarlinKimbra4due\thermistortables.h>
+#include <..\MarlinKimbra4due\ultralcd.cpp>
+#include <..\MarlinKimbra4due\ultralcd.h>
+#include <..\MarlinKimbra4due\ultralcd_implementation_hitachi_HD44780.h>
+#include <..\MarlinKimbra4due\ultralcd_st7920_u8glib_rrd.h>
+#include <..\MarlinKimbra4due\utf_mapper.h>
+#include <..\MarlinKimbra4due\vector_3.cpp>
+#include <..\MarlinKimbra4due\vector_3.h>
+#include <..\MarlinKimbra4due\watchdog.cpp>
+#include <..\MarlinKimbra4due\watchdog.h>
 #endif
